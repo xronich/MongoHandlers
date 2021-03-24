@@ -1,0 +1,248 @@
+﻿{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "properties": {
+    "type": {
+      "$id": "/properties/type",
+      "type": "string",
+      "title": "The Type Schema",
+      "description": "Type of form (Registration, Interest, etc.)",
+      "default": "",
+      "examples": [
+        "ABCDEF"
+      ]
+    },
+    "group": {
+      "$id": "/properties/group",
+      "type": "string",
+      "title": "The Type Schema",
+      "description": "Group of form (Registration, etc.)",
+      "default": "",
+      "examples": [
+        "ABCDEF"
+      ]
+    },
+    "fields": {
+      "$id": "/properties/fields",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$id": "/properties/fields/items",
+        "type": "object",
+        "properties": {
+          "layout": {
+            "$id": "/properties/fields/items/properties/layout",
+            "type": "object",
+            "properties": {
+              "type": {
+                "$id": "/properties/fields/items/properties/layout/properties/type",
+                "type": "string",
+                "title": "The Type Schema",
+                "description": "Layout type (CheckBox, Text, etc.)",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKL"
+                ]
+              },
+              "values": {
+                "$id": "/properties/fields/items/properties/layout/properties/values",
+                "type": "array",
+                "items": {
+                  "$id": "/properties/fields/items/properties/layout/properties/values/items",
+                  "type": "string",
+                  "title": "The 0 Schema",
+                  "description": "Predefined value (Use in dropdown etc.)",
+                  "default": "",
+                  "examples": [
+                    "ABCDEF"
+                  ]
+                }
+              },
+              "defaultValue": {
+                "$id": "/properties/fields/items/properties/layout/properties/defaultValue",
+                "type": "string",
+                "title": "The Defaultvalue Schema",
+                "description": "Default value for this component",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXY"
+                ]
+              },
+              "validators": {
+                "$id": "/properties/fields/items/properties/layout/properties/validators",
+                "type": "array",
+                "title": "Array of Validators Schema",
+                "description": "Array of Validators Schema",
+                "items": {
+                  "$id": "/properties/fields/items/properties/layout/properties/validators/validator",
+                  "type": "object",
+                  "description": "Validator description",
+                  "properties": {
+                    "name": {
+                      "$id": "/properties/fields/items/properties/layout/properties/validator/name",
+                      "type": "string",
+                      "description": "Name of validator",
+                      "examples": [
+                        "name",
+                        "range"
+                      ]
+                    },
+                    "data": {
+                      "$id": "/properties/fields/items/properties/layout/properties/validator/data",
+                      "type": "object",
+                      "description": "Data for validator",
+                      "examples": [
+                        "min",
+                        "max"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "data"
+                  ]
+                },
+                "default": "",
+                "examples": [
+                  "[{\r\n\t\"name\": \"range\",\r\n\t\"data\": {\r\n\t\t\"min\": 12,\r\n\t\t\"max\": 20\r\n\t}\r\n}]",
+                  "[{\r\n\t\"name\": \"url\",\r\n\t\"data\": {}\r\n}]"
+                ]
+              },
+              "label": {
+                "$id": "/properties/fields/items/properties/layout/properties/label",
+                "type": "string",
+                "title": "The Label Schema",
+                "description": "",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKLMN"
+                ]
+              },
+              "placeholder": {
+                "$id": "/properties/fields/items/properties/layout/properties/placeholder",
+                "type": "string",
+                "title": "The Placeholder Schema",
+                "description": "",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKL"
+                ]
+              },
+              "width": {
+                "$id": "/properties/fields/items/properties/layout/properties/width",
+                "type": "string",
+                "title": "The Width Schema",
+                "description": "Width in percentage (100%, 35%, etc.)",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHI"
+                ]
+              },
+              "multiline": {
+                "$id": "/properties/fields/items/properties/layout/properties/multiline",
+                "type": "boolean",
+                "title": "The Multiline Schema",
+                "description": "Should be true if it is multiline textblock",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "autocompleteSource": {
+                "$id": "/properties/fields/items/properties/layout/properties/autocompleteSource",
+                "type": "string",
+                "title": "The Autocompletesource Schema",
+                "description": "External source of autocomplete items",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKLMNOPQRSTU"
+                ]
+              },
+              "textNormalize": {
+                "$id": "/properties/fields/items/properties/layout/properties/textNormalize",
+                "type": "string",
+                "title": "The Textnormalize Schema",
+                "description": "External text normalize",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+                ]
+              },
+              "textFormat": {
+                "$id": "/properties/fields/items/properties/layout/properties/textFormat",
+                "type": "string",
+                "title": "The Textformat Schema",
+                "description": "External text format",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWX"
+                ]
+              },
+              "column": {
+                "$id": "/properties/fields/items/properties/layout/properties/column",
+                "type": "integer",
+                "title": "The Column Schema",
+                "description": "Column index in form grid",
+                "default": 0,
+                "examples": [
+                  -92
+                ],
+                "minimum": 0
+              },
+              "row": {
+                "$id": "/properties/fields/items/properties/layout/properties/row",
+                "type": "integer",
+                "title": "The Row Schema",
+                "description": "Row index in form grid",
+                "default": 0,
+                "examples": [
+                  947
+                ],
+                "minimum": 0
+              },
+              "property": {
+                "$id": "/properties/fields/items/properties/layout/properties/property",
+                "type": "string",
+                "title": "The Property Schema",
+                "description": "Output JSON property name",
+                "default": "",
+                "examples": [
+                  "ABCDEFGHIJKLMNOPQRSTUV"
+                ]
+              },
+              "fields": {
+                "$ref": "/properties/fields"
+              }
+            },
+            "required": [
+              "type",
+              "width",
+              "column",
+              "row",
+              "property"
+            ]
+          },
+          "metadata": {
+            "$id": "/properties/fields/items/properties/metadata",
+            "type": "object"
+          }
+        },
+        "required": [
+          "layout",
+          "metadata"
+        ]
+      }
+    },
+    "metadata": {
+      "$id": "/properties/fields/items/properties/metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "type",
+    "fields",
+    "metadata"
+  ]
+}

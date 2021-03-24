@@ -1,0 +1,56 @@
+﻿[
+  {
+    "$match": {
+      "_id": ObjectId('{0}')
+    }
+  },
+  {
+    "$lookup": {
+      "from": "galleries",
+      "localField": "KillerFeatureDisplaySettings.GalleryItemId",
+      "foreignField": "_id",
+      "as": "GalleryItem"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "categories",
+      "localField": "_id",
+      "foreignField": "Packages",
+      "as": "Categories"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "predefined-activities",
+      "localField": "PredefinedActivities",
+      "foreignField": "_id",
+      "as": "Activities"
+    }
+  },
+  {
+    "$project": {
+      "Id": "$_id",
+      "CreationDate": "$CreationDate",
+      "MessagesLimit": "$MessagesLimit",
+      "Name": "$Name",
+      "Title": "$Title",
+      "SubTitle": "$SubTitle",
+      "Price": "$Price",
+      "Type": "$Type",
+      "Visibility": "$Visibility",
+      "AvailableAttendeeType": "$AvailableAttendeeType",
+      "ConfirmationEmailTemplateName": "$ConfirmationEmailTemplateName",
+      "FailedPaymentEmailTemplateName": "$FailedPaymentEmailTemplateName",
+      "LastModifiedAdminId": "$LastModifiedAdminId",
+      "UpdateDate": "$UpdateDate",
+      "Status": "$Status",
+      "MultiUserConfirmationEmailTemplateKey": "$MultiUserConfirmationEmailTemplateKey",
+      "MultiUserFailedPaymentEmailTemplateKey": "$MultiUserFailedPaymentEmailTemplateKey",
+      "KillerFeatureDisplaySettings": "$KillerFeatureDisplaySettings",
+      "Activities": "$Activities",
+      "Categories": "$Categories",
+      "GalleryItem": "$GalleryItem"
+    }
+  }
+]
